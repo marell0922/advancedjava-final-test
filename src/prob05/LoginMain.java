@@ -22,6 +22,24 @@ public class LoginMain {
 		/*
 		 *  로그인 처리 부분을 완성 합니다.
 		 */
+		if(id==null) 
+			System.out.println("id가 입력되지 않았습니다.");
+		else if(password==null) 
+			System.out.println("password가 입력되지 않았습니다.");
+		
+			User target=new User(id,password);
+			
+			try {
+				login(joinUsers, target);
+			} catch (UserNotFoundException | PasswordDismatchException e) {
+				// TODO Auto-generated catch block
+				System.out.println(e);
+				return;
+			}
+			
+		//로그인 성공.
+		System.out.println("로그인 성공");
+		
 		
 
 	}

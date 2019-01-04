@@ -13,5 +13,16 @@ public class CalcApp {
 		String operation = scanner.next();
 		
 		/* operation에 따라 4칙 연산 객체를 생성하고 caculate 메서드를 호출합니다. */
+		Arithmetic arith=null;
+		switch(operation) {
+		case "+": arith=new Add(); break;
+		case "-": arith=new Sub(); break;
+		case "*": arith=new Mul(); break;
+		case "/": arith=new Div(); break;
+		default: System.out.println("+,-,*,/외에는 입력이 불가능 합니다."); break;
+		}
+		
+		int sum=arith.calculate(a, b);
+		System.out.println(sum);
 	}
 }
